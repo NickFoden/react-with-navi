@@ -1,11 +1,14 @@
 import * as React from "react";
-// import { Link } from "react-navi";
+import { NavLink } from "react-navi";
 
 export default function Reference() {
   return (
     <div>
       <h2>Reference</h2>
       <p>Coming soon.</p>
+      <nav>
+        <NavLink href="/about">About</NavLink>
+      </nav>
     </div>
   );
 }

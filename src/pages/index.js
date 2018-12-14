@@ -1,22 +1,30 @@
-import { createPage, createSwitch } from 'navi'
-import * as React from 'react'
-import { NavLink } from 'react-navi'
+import { createPage, createSwitch } from "navi";
+import * as React from "react";
+import { NavLink } from "react-navi";
 
 export default createSwitch({
   paths: {
-    '/': createPage({
+    "/": createPage({
       title: "Navi",
-      content:
+      content: (
         <div>
           <h2>Navi</h2>
           <p>A router/loader for React</p>
-          <nav><NavLink href='/reference'>API Reference</NavLink></nav>
+          <nav>
+            <NavLink href="/reference">API Reference</NavLink>
+          </nav>
         </div>
+      )
     }),
 
-    '/reference': createPage({
+    "/reference": createPage({
       title: "API Reference",
-      getContent: () => import('./reference.js')
+      getContent: () => import("./reference.js")
     }),
+
+    "/about": createPage({
+      title: "About",
+      content: <div>About</div>
+    })
   }
-})
+});
