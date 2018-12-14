@@ -15,7 +15,7 @@ class App extends React.Component {
           <header className="App-header">
             <h1 className="App-title">
               <NavLink href="/">
-                <img src="https://frontarm.com/navi-logo.png" />
+                <img src="https://frontarm.com/navi-logo.png" alt="navi" />
                 <span>Navi</span>
               </NavLink>
             </h1>
