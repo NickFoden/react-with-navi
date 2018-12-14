@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "navi": "^0.8.2",
+    "navi-scripts": "^0.8.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-navi": "^0.8.2",
@@ -11,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && navi-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
