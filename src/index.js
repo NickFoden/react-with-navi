@@ -3,12 +3,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import pages from "./pages";
 import App from "./App";
+import { email } from "./firebase";
+require("dotenv").config();
 
 Navi.app({
   // Specify the pages that navi-app should statically build, by passing
   // in a Switch object
   pages,
-
+  context: {
+    currentUser: {
+      userEmail: email
+    }
+  },
   // The default create-react-app renderer needs access to the App
   // component.
   exports: App,

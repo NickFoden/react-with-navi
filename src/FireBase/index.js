@@ -1,23 +1,40 @@
-import { default as firebase } from "firebase";
-
+import firebase from "firebase";
+import "firebase/firestore";
 let config = {
-  apiKey: process.env.FB_apiKey,
-  authDomain: process.env.FB_authDomain,
-  databaseURL: process.env.FB_databaseURL,
-  projectId: process.env.FB_projectId,
-  storageBucket: process.env.FB_storageBucket,
-  messagingSenderId: process.env.FB_messagingSenderId
+  apiKey: process.env.REACT_APP_FB_apiKey,
+  authDomain: process.env.REACT_APP_FB_authDomain,
+  databaseURL: process.env.REACT_APP_FB_databaseURL,
+  projectId: process.env.REACT_APP_FB_projectId,
+  storageBucket: process.env.REACT_APP_FB_storageBucket,
+  messagingSenderId: process.env.REACT_APP_FB_messagingSenderId
 };
+
+//Make sure to restart react after setting up the dot env
 
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
 
 const auth = firebase.auth();
-const db = firebase.database();
-const ref = firebase.database().ref();
+const firestore = firebase.firestore();
+const settings = { timestampsInSnapshots: true };
+firestore.settings(settings);
 
 let storage = firebase.storage();
 const storageRef = storage.ref();
 
-export { auth, db, firebase, ref, storageRef };
+var user = firebase.auth().currentUser;
+
+let email;
+
+if (user != null) {
+  email = user.email;
+}
+
+export { auth, email, firebase, firestore, storageRef };
+
+//Using firestore instead of real time db
+//Real time woudl be this below for setting up db refs
+
+// const db = firebase.database();
+// const ref = firebase.database().ref();
