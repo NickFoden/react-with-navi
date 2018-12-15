@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^6.2.0",
+    "firebase": "^5.7.0",
     "navi": "^0.8.2",
     "navi-scripts": "^0.8.5",
     "react": "^16.6.3",
